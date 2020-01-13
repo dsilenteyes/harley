@@ -1,0 +1,434 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100;
+    height: 100%;
+    /* background-color: black; */
+}
+
+.toggleBtn {
+    position: fixed;  
+    top:40px;
+    right: 20px;
+    z-index: 5;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+.toggleBtn span{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0px;
+    z-index: 5;
+
+    transition: all 400ms ease-in-out;
+
+}
+.toggleBtn.active span{
+    background-color: rgb(255, 255, 255);
+}
+.toggleBtn.active span:nth-child(2){
+    opacity: 0;
+}
+.toggleBtn.active span:nth-child(1){
+   transform-origin: left;
+   transform:rotate(45deg) translateX(5px);
+
+}
+.toggleBtn.active span:nth-child(3){
+    transform-origin: left;
+    transform:rotate(-45deg) translateY(5px);
+}
+.menu
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.menu:before,.menu:after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    width: 0vw;
+    height: 100vh;
+    transition: all 1000ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.856);
+}
+.menu:before {
+    left:0px;
+  }
+  .menu:after {
+    right:0px;
+  }
+  .menu.active:before,.menu.active:after {
+    width:50%;
+  }
+  .menu ul {
+    position:absolute;
+    top:-100%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+    transition:all 1000ms ease-in-out 1000ms;
+    
+  }
+  .menu ul li {
+    list-style:none;
+    font-size:45px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:20px 0px;
+    color:rgb(155, 152, 152);
+    letter-spacing: 10px;
+    font-weight: 100;
+   
+  }
+  #home{
+      text-decoration: none;
+  }
+  .menu ul li:hover
+  {
+      font-size: 50px;
+      cursor: pointer;
+      font-weight: 500;
+  }
+  .menu.active ul {
+    top:50%;
+  }
+  #background
+  {
+      width: 100%;
+      height: 100%;
+      background-image: url("https://images.unsplash.com/photo-1481567758055-3e8a6e89ca58?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+      background-position: center;
+      background-size: cover;
+    
+}
+#overlay
+{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.541);
+}
+
+#logo img
+{
+    position:absolute;
+    width: 200px;
+    top: -50px;
+    left: 43%;
+
+}
+#heading{
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top:40%;
+    left:5%;
+    
+}
+#heading h2
+{
+    letter-spacing: 10px;
+    font-size: 30px;
+    font-weight: 100;
+}
+#heading p
+{
+    font-size: 10px;
+}
+#heading button
+{
+    width: 120px;
+    height: 40px;
+    background-color: transparent;
+    border: #ffffff solid 1px;
+    color: #ffffff;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+#events h5
+{
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    position: absolute;
+    top: 40px;
+    left: 5%;
+
+}
+
+#facebook{
+    font-size: 20px;
+    color: #3B5998;
+    position: absolute;
+    bottom: 60px;
+    right: 200px;
+}
+#instagram
+{
+    font-size: 20px;
+    background: -webkit-linear-gradient(#A42DAF,#F2AD45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    bottom: 35px;
+    right: 200px;
+}
+#next
+{
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, black,  rgb(129, 78, 2));
+    display: flex;
+    justify-content: center;
+    
+   
+}
+#photos
+{
+    width: 97%;
+    height: 300px;
+    margin-top: 40px;
+    background: linear-gradient(to bottom, black, rgb(129, 78, 2));
+    display: flex;
+    justify-content: space-between;
+}
+.gallery
+{
+    width: 33%;
+    height: 300px;
+    background-color: aqua;
+}
+.gallery:hover{
+    border: solid 4px rgb(146, 146, 146);
+}
+
+.overlay
+{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, black, transparent);
+    position: relative;
+}
+.name
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-weight:200;
+}
+#gallery1
+{
+    background-image: url("https://www.harley-davidson.com/content/dam/h-d/images/motorcycles/my19/softail/fxdr-114/overview/hdi/19-softail-fxdr114-hdi-hero.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#gallery2
+{
+    background-image: url("https://bd.gaadicdn.com/processedimages/harley-davidson/livewire/source/v_livewire-std1559807764.jpg");
+    background-position: center;
+    background-size: cover;
+}
+#gallery3
+{
+    background-image: url("https://cdp.azureedge.net/products/USA/HD/2018/MC/CRUISER/FAT_BOY107/50/INDUSTRIAL_GRAY/2000000003.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#next2
+{
+    width: 100%;
+    height: 300px;
+    background-color: #191617;
+    position: relative;
+}
+#details
+{
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    /* background-color:rgb(129, 78, 2); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    /* border: 2px solid rgb(185, 185, 185); */
+}
+#details h2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-weight:500;    
+    text-shadow: 1px 1px rgb(100, 100, 100);
+}
+#details2
+{
+    position: absolute;
+    top: 50px;
+    right: 80px;
+}
+#details2 img
+{
+    
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 420px)
+{
+    #logo img
+{
+    position:absolute;
+    width: 150px;
+    top: 50px;
+    left: 29%;
+
+}
+#heading h2
+{
+    letter-spacing: 4px;
+    font-size: 15px;
+    font-weight: 100;
+}
+#heading p
+{
+    font-size: 7px;
+    line-height: 12px;
+}
+#heading button
+{
+    width: 60px;
+    height: 20px;
+    font-size: 7px;
+}
+#facebook{
+    font-size: 10px;
+    right: 160px;
+}
+#instagram{
+    font-size: 10px;
+    right: 160px;
+}
+.menu ul li{
+    font-size: 30px;
+}
+#events h5
+{
+    font-size: 10px;
+}
+.toggleBtn
+{
+    width: 20px;
+    height: 20px;
+    top: 35px;
+}
+.toggleBtn span{
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    margin: 4px 0px;
+
+}
+#photos
+{
+    display: block;
+}
+
+.gallery
+{
+    margin-top: 10px;
+    width: 100%;
+    height: 200px;
+    background-color: aqua;
+}
+#next
+{
+    min-height: 700px;
+}
+#next2
+{
+    width: 100vw;
+    min-height: 300px;
+    background-color: #191617;
+    position: relative;
+}
+#details
+{
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 95px;
+    /* background-color:rgb(129, 78, 2); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    /* border: 2px solid rgb(185, 185, 185); */
+}
+#details h2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    font-weight:500;    
+    text-shadow: 1px 1px rgb(100, 100, 100);
+}
+#details2
+{
+    position: absolute;
+    top: 150px;
+    right: 120px;
+}
+#details2 img
+{
+    
+    width: 100px;
+    height: 100px;
+}
+.name
+{
+    font-size: 10px;
+}
+}
